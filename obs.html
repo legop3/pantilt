@@ -36,7 +36,7 @@
 </style>
 <script>
     username = "admin"
-    password = ""
+    password = "wormy"
     address = "192.168.0.20"
 
     // const http = new XMLHttpRequest();
@@ -48,51 +48,18 @@
     //     'Authorization': `Basic ${btoa(username + ':' + password)}`
     // });
 
-    function makeAuthenticatedRequest(url, username, password) {
-        // Create a new XMLHttpRequest object
-        const xhr = new XMLHttpRequest();
-
-        // Prepare the request
-        xhr.open('GET', url, true);
-
-        // Set the Authorization header for basic authentication
-        xhr.setRequestHeader('Authorization', 'Basic ' + btoa(username + ':' + password));
-
-          // Set withCredentials to true to ignore CORS
-        xhr.withCredentials = true;
-
-        // Set up event handlers for response
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-            // Request was successful
-            console.log(xhr.responseText);
-            } else {
-            // Request failed
-            console.error('Request failed with status:', xhr.status);
-            }
-        };
-
-        // Handle network errors
-        xhr.onerror = function() {
-            console.error('Network error occurred');
-        };
-
-        // Send the request
-        xhr.send();
-    }
 
 
 
     
     function up(){
         // window.btoa(username + ':' + password);
-        // fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {method:'GET', headers: {
-        //     'Authorization': 'Basic ' + btoa(username + ':' + password)
-        // }, mode: 'no-cors'})
+        fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {method:'GET', headers: {
+            'Authorization': 'Basic ' + btoa(username + ':' + password)
+        }, mode: 'no-cors'})
         // fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {mode: "no-cors"})
         // console.log(wheaders)
         // fetch("http://admin:wormy@192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1")
-        makeAuthenticatedRequest(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, username, password)
     }
 
     function center(){
