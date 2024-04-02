@@ -34,40 +34,7 @@
         cursor: grab;
     }
 </style>
-<script>
-    username = "admin"
-    password = "wormy"
-    address = "192.168.0.20"
 
-    // const http = new XMLHttpRequest();
-    // let wheaders = new Headers();
-    // wheaders.set('Authorization', 'Basic ' + btoa(username + ":" + password));
-    // window.btoa(username + ':' + password);
-    // var headers = new Headers({
-    //     // 'Authorization': `Basic ${btoa(username)}`
-    //     'Authorization': `Basic ${btoa(username + ':' + password)}`
-    // });
-
-
-
-
-    
-    function up(){
-        // window.btoa(username + ':' + password);
-        fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {method:'GET', headers: {
-            'Authorization': 'Basic ' + btoa(username + ':' + password)
-        }, mode: 'no-cors'})
-        // fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {mode: "no-cors"})
-        // console.log(wheaders)
-        // fetch("http://admin:wormy@192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1")
-    }
-
-    function center(){
-        // fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=4`, {method:'GET', headers: {'Content-Type': 'application/json', 'Authorization': 'Basic ' + btoa(`${username}:`)}, mode: 'no-cors'})
-
-    }
-    
-</script>
 </head>
 <body>
     <div class="grid-container">
@@ -81,5 +48,41 @@
         <div class="grid-item" onclick="down">8</div>
         <div class="grid-item">9</div>
     </div>
+
+
+    <script>
+        username = "admin"
+        password = "wormy"
+        address = "192.168.0.20"
+    
+        // const http = new XMLHttpRequest();
+        // let wheaders = new Headers();
+        // wheaders.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+        // window.btoa(username + ':' + password);
+        // var headers = new Headers({
+        //     // 'Authorization': `Basic ${btoa(username)}`
+        //     'Authorization': `Basic ${btoa(username + ':' + password)}`
+        // });
+    
+    
+    
+    
+        
+        function up(){
+            // window.btoa(username + ':' + password);
+            fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {method:'GET', headers: {
+                'Authorization': 'Basic ' + btoa(username + ':' + password)
+            }})
+            // fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1`, {mode: "no-cors"})
+            // console.log(wheaders)
+            // fetch("http://admin:wormy@192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1")
+        }
+    
+        function center(){
+            // fetch(`http://${address}/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=4`, {method:'GET', headers: {'Content-Type': 'application/json', 'Authorization': 'Basic ' + btoa(`${username}:`)}, mode: 'no-cors'})
+    
+        }
+        
+    </script>
 </body>
 </html>
