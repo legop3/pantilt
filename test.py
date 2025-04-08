@@ -41,5 +41,6 @@ while True:
         # r = requests.get("http://192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=4")
         os.system('curl -k "http://admin:wormy@192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=30&TiltSingleMoveDegree=30&PanTiltSingleMove=4"')
     engine.say(str(rand))
+    time.sleep(1.5)
     engine.say(str(randwait))
     time.sleep(randwait)
