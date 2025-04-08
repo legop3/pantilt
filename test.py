@@ -12,7 +12,7 @@ engine = espeak.Espeak()
 
 while True:
     rand = random.randint(0, 4)
-    randwait = random.randint(2, 60)
+    randwait = random.randint(2, 40)
     print(rand)
     print(randwait)
     if rand == 0:
@@ -41,6 +41,6 @@ while True:
         # r = requests.get("http://192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=4")
         os.system('curl -k "http://admin:wormy@192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=30&TiltSingleMoveDegree=30&PanTiltSingleMove=4"')
     engine.say(str(rand))
-    time.sleep(1.5)
+    time.sleep(3)
     engine.say(str(randwait))
     time.sleep(randwait)
