@@ -2,12 +2,12 @@
 import os
 import random
 import time
-
+import pyttsx3
 
 # requests.head("http://192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1")
 # user_agent = r'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
 # headers = {'User-Agent' : user_agent, "Accept": "text/plain"}
-
+engine = pyttsx3.init()
 
 while True:
     rand = random.randint(0, 4)
@@ -37,4 +37,6 @@ while True:
         # r = requests.get("http://192.168.0.20/pantiltcontrol.cgi", params={'PanSingleMoveDegree': 5, 'TiltSingleMoveDegree': 5, 'PanTiltSingleMove': 4})
         # r = requests.get("http://192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=4")
         os.system('curl -k "http://admin:wormy@192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=30&TiltSingleMoveDegree=30&PanTiltSingleMove=4"')
+    engine.say(str(rand))
+    engine.runAndWait()
     time.sleep(30)
