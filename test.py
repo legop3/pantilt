@@ -7,6 +7,7 @@ import espeak
 # requests.head("http://192.168.0.20/pantiltcontrol.cgi?PanSingleMoveDegree=5&TiltSingleMoveDegree=5&PanTiltSingleMove=1")
 # user_agent = r'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
 # headers = {'User-Agent' : user_agent, "Accept": "text/plain"}
+espeak.init()
 engine = espeak.Espeak()
 
 while True:
