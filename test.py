@@ -43,4 +43,5 @@ while True:
     engine.say(str(rand))
     time.sleep(3)
     engine.say(str(randwait))
+    time.sleep(4)
     time.sleep(randwait)
