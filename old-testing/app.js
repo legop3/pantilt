@@ -68,7 +68,7 @@ async function home() {
 
 }
 
-(async() => {
+(() => {
     // await down(10)
     // await up(10)
     // // left('10')
