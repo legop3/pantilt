@@ -2,7 +2,7 @@
   "name": "pantilt",
   "version": "1.0.0",
   "description": "(running firmware version 1.00) as far as i know, firmware can be downgraded without doing anything special. updating the firmware may change the way the camera expects to be told what to do.",
-  "main": "main.js",
+  "main": "cameraMove.js",
   "scripts": {
     "test": "node main.js"
   },
