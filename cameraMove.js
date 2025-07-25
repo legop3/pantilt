@@ -1,4 +1,5 @@
-const http = require('http')
+// const http = require('http')
+import http from 'http'
 
 const address = '192.168.0.20'
 const username = 'admin'
@@ -6,34 +7,6 @@ const password = 'wormy'
 
 
 const credentials = Buffer.from(`${username}:${password}`).toString('base64')
-
-// const options = {
-//     hostname: '192.168.0.20',
-//     port: 80,
-//     path: '/pantiltcontrol.cgi?PanSingleMoveDegree=30&TiltSingleMoveDegree=30&PanTiltSingleMove=1',
-//     method: 'GET',
-//     headers: {
-//         'Authorization': `Basic ${credentials}`
-//     }
-// }
-
-// const req = http.request(options, (res) => {
-//     let data = '';
-  
-//     res.on('data', (chunk) => {
-//       data += chunk;
-//     });
-  
-//     res.on('end', () => {
-//       console.log('Response:', data);
-//     });
-//   });
-  
-//   req.on('error', (e) => {
-//     console.error(`Problem with request: ${e.message}`);
-//   });
-  
-//   req.end();
 
 // 1 up
 // 7 down
@@ -104,4 +77,6 @@ function moveCamera(degrees, direction) {
 
 }
 
-moveCamera(10, 'left')
+export default moveCamera
+
+// moveCamera(10, 'left')
