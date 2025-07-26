@@ -1,4 +1,5 @@
 import moveCamera from "./cameraMove.js";
+import { spawn } from "child_process"
 
 
 function moveRandom() {
@@ -12,6 +13,11 @@ function moveRandom() {
     console.log('random direction', randomDirection, 'random degrees', randomDegrees)
 
     moveCamera(randomDegrees, randomDirection)
+
+    // exec()
+    // `flite -t "${randomDirection} ${randomDegrees} Degrees."`
+
+    spawn('flite', ['-t', `${randomDirection} ${randomDegrees} Degrees.`])
     
 }
 
