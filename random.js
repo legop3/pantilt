@@ -1,5 +1,6 @@
 import moveCamera from "./cameraMove.js";
 import { spawn } from "child_process"
+import fs from 'node:fs'
 
 
 function moveRandom() {
@@ -15,9 +16,14 @@ function moveRandom() {
     moveCamera(randomDegrees, randomDirection)
 
     // exec()
-    // `flite -t "${randomDirection} ${randomDegrees} Degrees."`
+    // `flite -t "${randomDirection} ${randomDegrees} Degrees."
 
-    spawn('flite', ['-t', `${randomDirection} ${randomDegrees} Degrees.`])
+    let outtext = `${randomDirection} ${randomDegrees} Degrees.`
+
+    spawn('flite', ['-t', outtext])
+    fs.writeFile('outs/b64.txt', Buffer.from(outtext).toString('base64'), (err) => {
+        console.log('fs err', err)
+    })
     
 }
 
